@@ -1,0 +1,1200 @@
+@charset "UTF-8";
+
+/* =========================
+   カラー設定
+========================= */
+
+:root {
+  --color-bg: #050719;
+  --color-bg-light: #0d102c;
+  --color-card: #0b0e29;
+  --color-purple: #a855f7;
+  --color-blue: #38bdf8;
+  --color-white: #f8fafc;
+  --color-text: #d6d9e4;
+  --color-border: #334a7d;
+  --gradient: linear-gradient(90deg, #a855f7, #38bdf8);
+}
+
+/* =========================
+   基本設定
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(
+      circle at 85% 5%,
+      rgba(88, 76, 180, 0.16),
+      transparent 18%
+    ),
+    var(--color-bg);
+  color: var(--color-white);
+  font-family: Arial, "Noto Sans JP", sans-serif;
+  line-height: 1.8;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
+/* =========================
+   ヘッダー
+========================= */
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
+  padding-top: 28px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.header__logo span {
+  color: var(--color-purple);
+  font-size: 20px;
+}
+
+/* =========================
+   HOME
+========================= */
+
+.home {
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+.home__title {
+  margin: 20px 0 30px;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: clamp(70px, 9vw, 110px);
+  line-height: 1.1;
+  text-align: center;
+}
+
+.home__title::after {
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 14px auto 0;
+  border-radius: 10px;
+  background: var(--gradient);
+  content: "";
+}
+
+/* =========================
+   ナビゲーション
+========================= */
+
+.navigation {
+  margin-bottom: 40px;
+}
+
+.navigation__list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navigation__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 135px;
+  min-height: 54px;
+  padding: 4px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.navigation__link:hover {
+  border-color: var(--color-purple);
+  box-shadow:
+    0 0 10px rgba(168, 85, 247, 0.5),
+    inset 0 0 10px rgba(168, 85, 247, 0.1);
+  color: var(--color-blue);
+  transform: translateY(-3px);
+}
+
+/* =========================
+   メインビジュアル
+========================= */
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  min-height: 520px;
+  padding: 55px 60px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 28px;
+  background:
+    linear-gradient(var(--color-card), var(--color-card)) padding-box,
+    var(--gradient) border-box;
+}
+
+.hero::after {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 70px;
+  height: 70px;
+  opacity: 0.35;
+  background-image:
+    radial-gradient(
+      circle,
+      var(--color-purple) 2px,
+      transparent 3px
+    );
+  background-size: 18px 18px;
+  content: "";
+}
+
+.hero__text {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__line {
+  display: block;
+  width: 65px;
+  height: 6px;
+  margin-bottom: 38px;
+  border-radius: 999px;
+  background: var(--gradient);
+}
+
+.hero__title {
+  margin: 0 0 26px;
+  font-size: clamp(48px, 6vw, 74px);
+  line-height: 1.15;
+  letter-spacing: 1px;
+}
+
+.hero__title span {
+  display: block;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero__description {
+  margin: 0 0 35px;
+  color: var(--color-text);
+  font-size: 17px;
+}
+
+/* =========================
+   メインボタン
+========================= */
+
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 45px;
+  min-width: 220px;
+  padding: 14px 25px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background:
+    linear-gradient(var(--color-card), var(--color-card)) padding-box,
+    var(--gradient) border-box;
+  color: #c4b5fd;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero__button span {
+  color: var(--color-blue);
+  font-size: 24px;
+}
+
+.hero__button:hover {
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.35);
+  transform: translateY(-3px);
+}
+
+/* =========================
+   メイン画像
+========================= */
+
+.hero__image {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__image img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 22px rgba(168, 85, 247, 0.28));
+}
+
+/* 以前のimg-containerを使っていても対応 */
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 22px rgba(168, 85, 247, 0.28));
+}
+
+/* =========================
+   Hobby
+========================= */
+
+.hobby {
+  width: min(1180px, calc(100% - 80px));
+  margin: 60px auto 70px;
+}
+
+.section-heading {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.section-heading__title {
+  margin: 0;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 48px;
+  line-height: 1.3;
+}
+
+.section-heading__title::before,
+.section-heading__title::after {
+  display: inline-block;
+  width: 80px;
+  height: 1px;
+  margin: 0 25px 14px;
+  background: var(--gradient);
+  content: "";
+}
+
+.section-heading__text {
+  margin: 8px 0 0;
+  color: var(--color-text);
+}
+
+/* =========================
+   Hobbyカード
+========================= */
+
+.hobby__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 38px;
+}
+
+.hobby-card {
+  position: relative;
+  min-height: 390px;
+  padding: 40px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  background: rgba(13, 16, 44, 0.75);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.hobby-card:hover {
+  transform: translateY(-6px);
+}
+
+.hobby-card--game:hover {
+  border-color: var(--color-purple);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.18);
+}
+
+.hobby-card--music:hover {
+  border-color: var(--color-blue);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.18);
+}
+
+.hobby-card__icon {
+  display: grid;
+  width: 95px;
+  height: 95px;
+  margin: 0 auto 18px;
+  border: 1px solid var(--color-purple);
+  border-radius: 50%;
+  font-size: 40px;
+  place-items: center;
+}
+
+.hobby-card--music .hobby-card__icon {
+  border-color: var(--color-blue);
+}
+
+.hobby-card__title {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+.hobby-card__title::after {
+  display: block;
+  width: 50px;
+  height: 3px;
+  margin: 10px auto 22px;
+  border-radius: 999px;
+  background: var(--color-purple);
+  content: "";
+}
+
+.hobby-card--music .hobby-card__title::after {
+  background: var(--color-blue);
+}
+
+.hobby-card__text {
+  min-height: 70px;
+  margin: 0 0 25px;
+  color: var(--color-text);
+}
+
+/* =========================
+   Hobbyボタン
+========================= */
+
+.hobby-card__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 45px;
+  min-width: 210px;
+  padding: 11px 24px;
+  border: 1px solid var(--color-purple);
+  border-radius: 999px;
+  color: #c4b5fd;
+  transition: 0.3s;
+}
+
+.hobby-card--music .hobby-card__button {
+  border-color: var(--color-blue);
+  color: var(--color-blue);
+}
+
+.hobby-card__button:hover {
+  background: rgba(168, 85, 247, 0.12);
+  transform: translateY(-2px);
+}
+
+.hobby-card--music .hobby-card__button:hover {
+  background: rgba(56, 189, 248, 0.12);
+}
+
+/* =========================
+   GAMESページ
+========================= */
+
+.games-page {
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto 80px;
+}
+
+.games-page__title {
+  margin: 20px 0 30px;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: clamp(64px, 8vw, 100px);
+  line-height: 1.1;
+  text-align: center;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.game-card {
+  position: relative;
+  min-height: 285px;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: rgba(13, 16, 44, 0.75);
+  transition: 0.3s;
+}
+
+.game-card:hover {
+  transform: translateY(-6px);
+}
+
+.game-card--purple:hover { border-color: var(--color-purple); box-shadow: 0 0 25px rgba(168, 85, 247, 0.18); }
+.game-card--blue:hover { border-color: var(--color-blue); box-shadow: 0 0 25px rgba(56, 189, 248, 0.18); }
+.game-card--pink:hover { border-color: #f472b6; box-shadow: 0 0 25px rgba(244, 114, 182, 0.18); }
+.game-card--valorant:hover { border-color: #ff4655; box-shadow: 0 0 25px rgba(255, 70, 85, 0.18); }
+.game-card--minecraft:hover { border-color: #7bc043; box-shadow: 0 0 25px rgba(123, 192, 67, 0.18); }
+.game-card--wilds:hover { border-color: #d5a84b; box-shadow: 0 0 25px rgba(213, 168, 75, 0.18); }
+
+.game-card__number {
+  position: absolute;
+  top: 22px;
+  right: 26px;
+  color: var(--color-border);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.game-card__icon {
+  display: grid;
+  width: 78px;
+  height: 78px;
+  margin-bottom: 24px;
+  border: 1px solid var(--color-purple);
+  border-radius: 16px;
+  color: var(--color-purple);
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  place-items: center;
+}
+
+.game-card__cover {
+  display: block;
+  width: 100%;
+  height: 145px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  padding: 15px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  }
+
+.game-card__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-card--valorant .game-card__cover {
+  border-color: #ff4655;
+  background: linear-gradient(135deg, #21111b, #671d2c);
+  color: #ff4655;
+}
+
+.game-card--minecraft .game-card__cover {
+  border-color: #7bc043;
+  background: linear-gradient(135deg, #182c39, #3f753d);
+  color: #d8f2c4;
+}
+
+.game-card--wilds .game-card__cover {
+  border-color: #d5a84b;
+  background: linear-gradient(135deg, #272218, #6b4d28);
+}
+
+.game-card--blue .game-card__icon { border-color: var(--color-blue); color: var(--color-blue); }
+.game-card--pink .game-card__icon { border-color: #f472b6; color: #f472b6; }
+
+.game-card__title {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.game-card p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 15px;
+}
+
+/* =========================
+   MUSICページ
+========================= */
+
+.music-page {
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto 80px;
+}
+
+.music-page__title {
+  margin: 20px 0 30px;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: clamp(64px, 8vw, 100px);
+  line-height: 1.1;
+  text-align: center;
+}
+
+.artist-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 38px;
+  margin: 35px 0 75px;
+  padding: 28px 40px;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  background:
+    linear-gradient(var(--color-card), var(--color-card)) padding-box,
+    var(--gradient) border-box;
+}
+
+.artist-hero__image-wrap {
+  height: 235px;
+  overflow: hidden;
+  border: 1px solid #ef4444;
+  border-radius: 12px;
+  box-shadow: 10px 10px 0 rgba(168, 85, 247, 0.18);
+}
+
+.artist-hero__content {
+  padding-right: 0;
+}
+
+.artist-hero__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artist-hero__eyebrow {
+  margin: 0 0 12px;
+  color: var(--color-blue);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.artist-hero__title {
+  margin: 0 0 18px;
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.15;
+}
+
+.artist-hero__text {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.music-section {
+  margin-bottom: 25px;
+}
+
+.music-photo-pair {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 28px 0 38px;
+}
+
+.music-photo-pair img {
+  width: 145px;
+  height: 105px;
+  border: 2px solid var(--color-card);
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 5px 5px 0 rgba(168, 85, 247, 0.2);
+}
+
+.music-photo-pair img:first-child {
+  border-color: var(--color-blue);
+  transform: rotate(-4deg);
+}
+
+.music-photo-pair img:last-child {
+  border-color: #ef4444;
+  transform: rotate(4deg);
+}
+
+.music-reasons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.music-reason {
+  padding: 28px;
+  border-top: 2px solid var(--color-blue);
+  background: var(--color-bg-light);
+}
+
+.music-reason:nth-child(2) { border-color: var(--color-purple); }
+.music-reason:nth-child(3) { border-color: #ef4444; }
+
+.music-reason span {
+  color: var(--color-blue);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.music-reason h3 {
+  margin: 14px 0 8px;
+  font-size: 21px;
+}
+
+.music-reason p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 15px;
+}
+
+/* =========================
+   CONTACTページ
+========================= */
+
+.contact-page {
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto 80px;
+}
+
+.contact-page__title {
+  margin: 20px 0 30px;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: clamp(64px, 8vw, 100px);
+  line-height: 1.1;
+  text-align: center;
+}
+
+.contact-card {
+  max-width: 900px;
+  margin: 35px auto 0;
+  padding: 48px 60px;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  background:
+    linear-gradient(var(--color-card), var(--color-card)) padding-box,
+    var(--gradient) border-box;
+}
+
+.contact-card__heading {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.contact-card__label {
+  margin: 0 0 8px;
+  color: var(--color-blue);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.contact-card__title {
+  margin: 0 0 8px;
+  font-size: 38px;
+}
+
+.contact-card__heading > p:last-child {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.contact-form {
+  display: grid;
+  gap: 24px;
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.contact-form__field {
+  display: grid;
+  gap: 8px;
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  outline: none;
+  background: var(--color-bg-light);
+  color: var(--color-white);
+  font: inherit;
+  font-weight: normal;
+  resize: vertical;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #8992aa;
+}
+
+.contact-form__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  width: fit-content;
+  min-width: 180px;
+  margin: 4px auto 0;
+  padding: 13px 22px;
+  border: 1px solid var(--color-blue);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-blue);
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact-form__button:hover {
+  background: rgba(56, 189, 248, 0.12);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   ABOUTページ
+========================= */
+
+.about {
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto 80px;
+}
+
+.about__title {
+  margin: 20px 0 30px;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: clamp(64px, 8vw, 100px);
+  line-height: 1.1;
+  text-align: center;
+}
+
+.about__title::after {
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 14px auto 0;
+  border-radius: 999px;
+  background: var(--gradient);
+  content: "";
+}
+
+/* =========================
+   プロフィールカード
+========================= */
+
+.profile-card {
+  padding: 55px 60px;
+  border: 1px solid transparent;
+  border-radius: 28px;
+  background:
+    linear-gradient(var(--color-card), var(--color-card)) padding-box,
+    var(--gradient) border-box;
+}
+
+.profile-card__heading {
+  margin-bottom: 38px;
+  text-align: center;
+}
+
+.profile-card__label {
+  margin: 0 0 6px;
+  color: var(--color-blue);
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+.profile-card__title {
+  margin: 0;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: clamp(34px, 5vw, 54px);
+}
+
+.profile-card__line {
+  display: block;
+  width: 85px;
+  height: 4px;
+  margin: 18px auto 0;
+  border-radius: 999px;
+  background: var(--gradient);
+}
+
+/* =========================
+   プロフィール一覧
+========================= */
+
+.profile-list {
+  display: grid;
+  gap: 18px;
+  margin: 0;
+}
+
+.profile-list__item {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  align-items: center;
+  min-height: 78px;
+  padding: 18px 28px;
+  border-left: 6px solid var(--color-purple);
+  border-radius: 14px;
+  background: rgba(30, 38, 74, 0.78);
+}
+
+.profile-list__item--blue {
+  border-left-color: var(--color-blue);
+}
+
+.profile-list__item dt {
+  color: var(--color-white);
+  font-weight: bold;
+}
+
+.profile-list__item dd {
+  margin: 0;
+  color: var(--color-text);
+}
+
+/* =========================
+   HOMEへ戻るボタン
+========================= */
+
+.about__home-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: fit-content;
+  margin: 40px auto 0;
+  padding: 13px 28px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background:
+    linear-gradient(var(--color-card), var(--color-card)) padding-box,
+    var(--gradient) border-box;
+  color: #c4b5fd;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.about__home-button:hover {
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.3);
+  transform: translateY(-3px);
+}
+
+/* =========================
+   フッター
+========================= */
+
+.footer {
+  position: relative;
+  padding: 25px 40px 35px;
+  color: #85899b;
+  text-align: center;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+
+.footer__links a {
+  color: var(--color-white);
+  transition: 0.3s;
+}
+
+.footer__links a:hover {
+  color: var(--color-blue);
+}
+
+.footer__copyright {
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.footer__page-top {
+  position: absolute;
+  right: 45px;
+  bottom: 28px;
+  display: grid;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #54229e;
+  color: var(--color-white);
+  font-size: 22px;
+  place-items: center;
+  transition: 0.3s;
+}
+
+.footer__page-top:hover {
+  background: var(--color-purple);
+  transform: translateY(-4px);
+}
+
+/* =========================
+   タブレット
+========================= */
+
+@media (max-width: 1000px) {
+  .navigation__list {
+    flex-wrap: wrap;
+  }
+
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .music-reasons {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__image,
+  .img-container {
+    width: 100%;
+    max-width: 550px;
+    margin: 30px auto 0;
+  }
+}
+
+/* =========================
+   スマートフォン
+========================= */
+
+@media (max-width: 700px) {
+  .header {
+    width: calc(100% - 40px);
+    padding-top: 20px;
+  }
+
+  .header__logo {
+    font-size: 14px;
+  }
+
+  .home,
+  .hobby,
+  .about,
+  .games-page,
+  .music-page,
+  .contact-page {
+    width: calc(100% - 32px);
+  }
+
+  .home__title {
+    margin-top: 20px;
+    font-size: 64px;
+  }
+
+  .about__title {
+    margin-top: 20px;
+    font-size: 56px;
+  }
+
+  .games-page__title {
+    margin-top: 20px;
+    font-size: 56px;
+  }
+
+  .music-page__title {
+    margin-top: 20px;
+    font-size: 56px;
+  }
+
+  .contact-page__title {
+    margin-top: 20px;
+    font-size: 56px;
+  }
+
+  .navigation__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .navigation__link {
+    width: 100%;
+  }
+
+  .hero {
+    display: block;
+    min-height: auto;
+    padding: 38px 25px;
+    border-radius: 20px;
+  }
+
+  .hero__title {
+    font-size: 44px;
+  }
+
+  .hero__description br {
+    display: none;
+  }
+
+  .hero__image,
+  .img-container {
+    margin-top: 35px;
+  }
+
+  .hero__image img,
+  .img-container img {
+    max-width: 400px;
+  }
+
+  .section-heading__title {
+    font-size: 39px;
+  }
+
+  .section-heading__title::before,
+  .section-heading__title::after {
+    width: 35px;
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+
+  .hobby__list {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-card {
+    min-height: auto;
+    padding: 35px 20px;
+  }
+
+  .artist-hero {
+    display: block;
+    margin-bottom: 55px;
+    padding: 25px;
+  }
+
+  .artist-hero__image-wrap {
+    height: 190px;
+    margin-bottom: 30px;
+  }
+
+  .artist-hero__content {
+    padding-right: 0;
+  }
+
+  .contact-card {
+    padding: 35px 20px;
+  }
+
+  .contact-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .music-photo-pair {
+    gap: 12px;
+    margin: 24px 0 32px;
+  }
+
+  .music-photo-pair img {
+    width: calc(50% - 6px);
+    height: 95px;
+  }
+
+  .profile-card {
+    padding: 35px 20px;
+  }
+
+  .profile-list__item {
+    display: block;
+    padding: 18px 20px;
+  }
+
+  .profile-list__item dt {
+    margin-bottom: 6px;
+  }
+
+  .footer {
+    padding-bottom: 90px;
+  }
+
+  .footer__page-top {
+    right: 20px;
+    bottom: 20px;
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="川添琉斗へのお問い合わせページです。">
+	<title>Contact | Ryuto Kawazoe</title>
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body id="top">
+	<header class="header">
+		<a class="header__logo" href="./index.html">
+			<span aria-hidden="true">●</span>
+			RYUTO KAWAZOE
+		</a>
+
+	</header>
+
+	<main>
+		<section class="contact-page">
+			<h1 class="contact-page__title">CONTACT</h1>
+
+			<nav id="global-navigation" class="navigation" aria-label="メインメニュー">
+				<ul class="navigation__list">
+					<li><a class="navigation__link" href="./index.html">HOME</a></li>
+					<li><a class="navigation__link" href="./about.html">ABOUT ME</a></li>
+					<li><a class="navigation__link" href="./games.html">GAMES</a></li>
+					<li><a class="navigation__link" href="./music.html">MUSIC</a></li>
+					<li><a class="navigation__link" href="./contact.html">CONTACT</a></li>
+				</ul>
+			</nav>
+
+			<section class="contact-card" aria-labelledby="contact-heading">
+				<div class="contact-card__heading">
+					<p class="contact-card__label">GET IN TOUCH</p>
+					<h2 id="contact-heading" class="contact-card__title">お問い合わせ</h2>
+					<p>質問やメッセージがありましたら、気軽に送ってください。</p>
+				</div>
+
+				<form class="contact-form" action="#" method="post">
+					<div class="contact-form__row">
+						<label class="contact-form__field">
+							<span>お名前</span>
+							<input type="text" name="name" autocomplete="name" placeholder="お名前を入力" required>
+						</label>
+						<label class="contact-form__field">
+							<span>メールアドレス</span>
+							<input type="email" name="email" autocomplete="email" placeholder="メールアドレスを入力" required>
+						</label>
+					</div>
+					<label class="contact-form__field">
+						<span>お問い合わせ内容</span>
+						<textarea name="message" rows="7" placeholder="お問い合わせ内容を入力" required></textarea>
+					</label>
+					<button class="contact-form__button" type="submit">送信する <span aria-hidden="true">→</span></button>
+				</form>
+			</section>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__links">
+			<a href="./index.html">Home</a>
+			<a href="./about.html">About</a>
+			<a href="./games.html">Games</a>
+			<a href="./music.html">Music</a>
+			<a href="./contact.html">Contact</a>
+		</div>
+		<p class="footer__copyright"><small>&copy; 2026 RYUTO KAWAZOE</small></p>
+		<a class="footer__page-top" href="#top" aria-label="ページ上部へ戻る">↑</a>
+	</footer>
+
+</body>
+</html>
